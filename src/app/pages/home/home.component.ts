@@ -7,7 +7,7 @@ import { ProjectsComponent } from './components/projects/projects.component';
   standalone: true,
   imports: [HeaderComponent, ProjectsComponent],
   template: `
-    <div class="flex justify-center py-28 print:py-0">
+    <div class="flex justify-center py-16 md:py-28 print:py-0">
       <main class="max-w-3xl mx-8 w-full flex flex-col gap-20">
         <app-header />
         <app-projects />

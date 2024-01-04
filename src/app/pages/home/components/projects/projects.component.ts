@@ -10,7 +10,7 @@ import { LinkIconComponent } from '@shared/components/link-icon/link-icon.compon
   template: `
     <section>
       <h2 class="text-4xl font-semibold">Projects</h2>
-      <ul class="my-10 flex flex-col gap-3">
+      <ul class="mt-10 flex flex-col gap-3">
         <li>
           <article
             class="px-5 py-4 border border-neutral-800 rounded-lg hover:scale-[102%] transition-all"

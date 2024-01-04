@@ -10,7 +10,9 @@ import { LinkIconComponent } from '@shared/components/link-icon/link-icon.compon
   imports: [LinkIconComponent, DatePipe],
   template: `
     <h2 class="text-4xl font-semibold">Blog</h2>
-    <ul class="mt-10 flex flex-wrap gap-3 justify-center">
+    <ul
+      class="mt-10 flex md:flex-wrap flex-col md:flex-row gap-3 justify-center"
+    >
       @for (post of posts; track post.id) {
         <li class="flex-[1_0_40%]">
           <a

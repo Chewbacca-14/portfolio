@@ -18,8 +18,10 @@ import { Project } from 'src/app/models/project.interface';
             <article
               class="px-5 py-4 border border-neutral-800 rounded-lg hover:scale-[102%] transition-all"
             >
-              <header class="flex gap-3 items-center mb-2">
-                <h3 class="text-xl font-semibold">{{ project.title }}</h3>
+              <header class="flex flex-row gap-3 items-center mb-2 flex-wrap">
+                <h3 class="text-xl font-semibold text-nowrap">
+                  {{ project.title }}
+                </h3>
                 <ul class="flex gap-3">
                   @for (tag of project.tags; track $index) {
                     <li

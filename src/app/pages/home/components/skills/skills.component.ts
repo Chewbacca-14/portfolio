@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { SKILLS } from '@assets/data/skills.mock';
 
 @Component({
   selector: 'app-skills',
@@ -19,15 +20,5 @@ import { Component } from '@angular/core';
   `,
 })
 export class SkillsComponent {
-  skills = [
-    'Angular',
-    'Typescript',
-    'Tailwind',
-    'HTML',
-    'CSS',
-    'Astro',
-    'Bootstrap',
-    'Node',
-    'Nestjs',
-  ];
+  skills: string[] = SKILLS;
 }

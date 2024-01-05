@@ -5,7 +5,7 @@ import { SKILLS } from '@assets/data/skills.mock';
   selector: 'app-skills',
   standalone: true,
   template: `
-    <section>
+    <section id="skills">
       <h2 class="text-4xl font-semibold">Skills</h2>
       <ul class="mt-10 flex gap-3 flex-wrap justify-center">
         @for (skill of skills; track $index) {

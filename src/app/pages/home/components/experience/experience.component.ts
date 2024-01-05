@@ -8,7 +8,7 @@ import { Experience } from 'src/app/models/experience.interface';
   standalone: true,
   imports: [LinkIconComponent],
   template: `
-    <section>
+    <section id="experience">
       <h2 class="text-4xl font-semibold">Experience</h2>
       <ul class="mt-10 flex flex-col gap-3">
         @for (experience of experiences; track experience.id) {

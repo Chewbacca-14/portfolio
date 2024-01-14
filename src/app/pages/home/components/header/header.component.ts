@@ -18,11 +18,15 @@ import { XIconComponent } from '@shared/components/x-icon/x-icon.component';
       />
       <div class="flex flex-col gap-2">
         <div>
-          <span class="font-semibold text-neutral-400">Hey! My name is</span>
-          <h1 class="text-6xl font-semibold">Uriel Spiridione</h1>
+          <span class="font-semibold text-neutral-400 md:text-base text-sm"
+            >Hey! I'm</span
+          >
+          <h1 class="md:text-6xl font-semibold text-5xl">Uriel Spiridione</h1>
         </div>
-        <h2 class="text-xl text-cyan-500">Full stack web developer</h2>
-        <p class="text-neutral-400 font-semibold">
+        <h2 class="text-lg md:text-xl text-cyan-500">
+          Full stack web developer
+        </h2>
+        <p class="md:text-base text-sm text-neutral-400 font-semibold">
           Web Developer & Design Enthusiast | Creating Elegant and Functional
           Online Spaces | Transforming Ideas into Interactive Experiences |
           Crafting Code with Creativity and Minimalism.

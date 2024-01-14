@@ -20,7 +20,7 @@ import { LinkIconComponent } from '@shared/components/link-icon/link-icon.compon
               [href]="post.url"
               target="_blank"
               rel="noopener noreferrer"
-              class="pt-3 flex-col pb-4 px-4 flex rounded-lg hover:scale-[102%] transition-all hover:bg-neutral-500/10 h-fit"
+              class="flex-col py-3 px-4 flex rounded-lg hover:scale-[102%] transition-all hover:bg-neutral-500/10 h-fit"
             >
               <header>
                 <span class="text-neutral-500 font-bold text-sm">{{

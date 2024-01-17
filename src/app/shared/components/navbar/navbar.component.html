@@ -1,21 +1,23 @@
 <nav
-  class="h-14 md:shadow-sm shadow-neutral-400/50 flex items-center px-5 md:px-16 justify-between text-neutral-400"
+  class="sticky top-0 flex h-14 justify-center bg-neutral-950/50 text-neutral-400 backdrop-blur-md"
 >
-  <a routerLink="/" class="flex items-center gap-2">
-    <app-devly-icon />
-    <span class="font-semibold"> Uriel Spiridione </span>
-  </a>
-  <section class="hidden md:block">
-    <ul class="flex gap-6 font-semibold">
-      <li class="hover:scale-105 transition-all hover:text-cyan-600">
-        <a href="#projects">Projects</a>
-      </li>
-      <li class="hover:scale-105 transition-all hover:text-cyan-600">
-        <a href="#experience">Experience</a>
-      </li>
-      <li class="hover:scale-105 transition-all hover:text-cyan-600">
-        <a href="#blog">Blog</a>
-      </li>
-    </ul>
-  </section>
+  <div class="flex w-full max-w-4xl items-center justify-between">
+    <a routerLink="/" class="flex items-center gap-2">
+      <app-devly-icon />
+      <span class="font-semibold"> Uriel Spiridione </span>
+    </a>
+    <section class="hidden md:block">
+      <ul class="flex gap-6 font-semibold">
+        <li class="transition-all hover:scale-105 hover:text-cyan-600">
+          <a href="#projects">Projects</a>
+        </li>
+        <li class="transition-all hover:scale-105 hover:text-cyan-600">
+          <a href="#experience">Experience</a>
+        </li>
+        <li class="transition-all hover:scale-105 hover:text-cyan-600">
+          <a href="#blog">Blog</a>
+        </li>
+      </ul>
+    </section>
+  </div>
 </nav>

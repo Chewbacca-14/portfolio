@@ -18,15 +18,15 @@ import { XIconComponent } from '@shared/components/x-icon/x-icon.component';
       />
       <div class="flex flex-col gap-2">
         <div>
-          <span class="font-semibold text-neutral-400 md:text-base text-sm"
+          <span class="text-sm font-semibold text-neutral-400 md:text-base"
             >Hey! I'm</span
           >
-          <h1 class="md:text-6xl font-semibold text-5xl">Uriel Spiridione</h1>
+          <h1 class="text-5xl font-semibold md:text-6xl">Uriel Spiridione</h1>
         </div>
-        <h2 class="text-lg md:text-xl text-cyan-500">
+        <h2 class="text-lg text-cyan-500 md:text-xl">
           Full stack web developer
         </h2>
-        <p class="md:text-base text-sm text-neutral-400 font-semibold">
+        <p class="text-sm font-semibold text-neutral-400 md:text-base">
           Web Developer & Design Enthusiast | Creating Elegant and Functional
           Online Spaces | Transforming Ideas into Interactive Experiences |
           Crafting Code with Creativity and Minimalism.
@@ -35,25 +35,28 @@ import { XIconComponent } from '@shared/components/x-icon/x-icon.component';
       <div class="flex gap-3">
         <a
           href="https://www.linkedin.com/in/urielspiridione/"
-          class="hover:scale-110 transition-all fill-neutral-50 border border-neutral-500 rounded-lg p-2"
+          class="rounded-lg border border-neutral-500 fill-neutral-50 p-2 transition-all hover:scale-110"
           target="_blank"
           rel="noopener noreferrer"
+          title="Linkedin"
         >
           <app-linkedin-icon class="h-5" />
         </a>
         <a
           href="https://twitter.com/UrielSpiridione"
-          class="hover:scale-110 transition-all fill-neutral-50 border border-neutral-500 rounded-lg p-2"
+          class="rounded-lg border border-neutral-500 fill-neutral-50 p-2 transition-all hover:scale-110"
           target="_blank"
           rel="noopener noreferrer"
+          title="X/Twitter"
         >
           <app-x-icon class="h-5" />
         </a>
         <a
           href="https://github.com/USpiri"
-          class="hover:scale-110 transition-all fill-neutral-50 border border-neutral-500 rounded-lg p-2"
+          class="rounded-lg border border-neutral-500 fill-neutral-50 p-2 transition-all hover:scale-110"
           target="_blank"
           rel="noopener noreferrer"
+          title="Github"
         >
           <app-github-icon class="h-5" />
         </a>

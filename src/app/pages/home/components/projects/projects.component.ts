@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { PROJECTS } from '@assets/data/projects.mock';
+import { ButtonComponent } from '@shared/components/button/button.component';
 import { GithubIconComponent } from '@shared/components/github-icon/github-icon.component';
 import { InfoIconComponent } from '@shared/components/info-icon/info-icon.component';
 import { LinkButtonComponent } from '@shared/components/link-button/link-button.component';
@@ -14,6 +15,7 @@ import { Project } from 'src/app/models/project.interface';
     GithubIconComponent,
     InfoIconComponent,
     LinkButtonComponent,
+    ButtonComponent,
   ],
   template: `
     <section id="projects">
@@ -58,12 +60,12 @@ import { Project } from 'src/app/models/project.interface';
                     <app-github-icon class="h-4 w-4" />
                   </app-link-button>
                 }
-                <button
-                  class="rounded-lg border border-neutral-600 fill-neutral-50 p-2 text-sm transition-all hover:scale-110"
-                  title="Project info"
-                >
-                  <app-info-icon class="h-4 w-4" />
-                </button>
+                <app-button icon>
+                  <app-info-icon
+                    class="h-4 w-4"
+                    title="{{ project.title }} more info"
+                  />
+                </app-button>
               </footer>
             </article>
           </li>

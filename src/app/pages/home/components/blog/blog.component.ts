@@ -23,7 +23,7 @@ import { BlogService } from '@shared/services/blog.service';
               class="flex h-fit flex-col rounded-lg px-4 py-3 transition-all hover:scale-[102%] hover:bg-neutral-500/10"
             >
               <header>
-                <span class="text-sm font-bold text-neutral-500">{{
+                <span class="text-sm font-semibold text-neutral-400/80">{{
                   post.date | date
                 }}</span>
                 <h3 class="mb-1 line-clamp-2 text-xl font-semibold md:text-2xl">

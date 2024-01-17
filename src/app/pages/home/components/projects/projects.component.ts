@@ -2,13 +2,19 @@ import { Component } from '@angular/core';
 import { PROJECTS } from '@assets/data/projects.mock';
 import { GithubIconComponent } from '@shared/components/github-icon/github-icon.component';
 import { InfoIconComponent } from '@shared/components/info-icon/info-icon.component';
+import { LinkButtonComponent } from '@shared/components/link-button/link-button.component';
 import { LinkIconComponent } from '@shared/components/link-icon/link-icon.component';
 import { Project } from 'src/app/models/project.interface';
 
 @Component({
   selector: 'app-projects',
   standalone: true,
-  imports: [LinkIconComponent, GithubIconComponent, InfoIconComponent],
+  imports: [
+    LinkIconComponent,
+    GithubIconComponent,
+    InfoIconComponent,
+    LinkButtonComponent,
+  ],
   template: `
     <section id="projects">
       <h2 class="text-4xl font-semibold">Projects</h2>
@@ -36,24 +42,22 @@ import { Project } from 'src/app/models/project.interface';
                 {{ project.description }}
               </p>
               <footer class="flex gap-2">
-                <a
-                  [href]="project.url"
-                  class="rounded-lg border border-neutral-600 fill-neutral-50 p-2 text-sm transition-all hover:scale-110"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  title="Project Link"
-                >
-                  <app-link-icon class="h-4 w-4" />
-                </a>
-                <a
-                  [href]="project.repo"
-                  class="rounded-lg border border-neutral-600 fill-neutral-50 p-2 text-sm transition-all hover:scale-110"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  title="Project repo"
-                >
-                  <app-github-icon class="h-4 w-4" />
-                </a>
+                @if (project.url) {
+                  <app-link-button
+                    [href]="project.url"
+                    title="{{ project.title }} page"
+                  >
+                    <app-link-icon class="h-4 w-4" />
+                  </app-link-button>
+                }
+                @if (project.repo) {
+                  <app-link-button
+                    [href]="project.repo"
+                    title="{{ project.title }} repository"
+                  >
+                    <app-github-icon class="h-4 w-4" />
+                  </app-link-button>
+                }
                 <button
                   class="rounded-lg border border-neutral-600 fill-neutral-50 p-2 text-sm transition-all hover:scale-110"
                   title="Project info"

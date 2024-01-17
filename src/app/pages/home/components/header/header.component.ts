@@ -1,12 +1,18 @@
 import { Component } from '@angular/core';
 import { GithubIconComponent } from '@shared/components/github-icon/github-icon.component';
+import { LinkButtonComponent } from '@shared/components/link-button/link-button.component';
 import { LinkedinIconComponent } from '@shared/components/linkedin-icon/linkedin-icon.component';
 import { XIconComponent } from '@shared/components/x-icon/x-icon.component';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [XIconComponent, LinkedinIconComponent, GithubIconComponent],
+  imports: [
+    XIconComponent,
+    LinkedinIconComponent,
+    GithubIconComponent,
+    LinkButtonComponent,
+  ],
   template: `
     <section class="flex flex-col justify-between gap-5">
       <img
@@ -33,33 +39,21 @@ import { XIconComponent } from '@shared/components/x-icon/x-icon.component';
         </p>
       </div>
       <div class="flex gap-3">
-        <a
+        <app-link-button
           href="https://www.linkedin.com/in/urielspiridione/"
-          class="rounded-lg border border-neutral-500 fill-neutral-50 p-2 transition-all hover:scale-110"
-          target="_blank"
-          rel="noopener noreferrer"
-          title="Linkedin"
+          title="Linkedin page"
         >
           <app-linkedin-icon class="h-5" />
-        </a>
-        <a
-          href="https://twitter.com/UrielSpiridione"
-          class="rounded-lg border border-neutral-500 fill-neutral-50 p-2 transition-all hover:scale-110"
-          target="_blank"
-          rel="noopener noreferrer"
-          title="X/Twitter"
+        </app-link-button>
+        <app-link-button
+          href="https://x.com/UrielSpiridione/"
+          title="X/Twitter page"
         >
           <app-x-icon class="h-5" />
-        </a>
-        <a
-          href="https://github.com/USpiri"
-          class="rounded-lg border border-neutral-500 fill-neutral-50 p-2 transition-all hover:scale-110"
-          target="_blank"
-          rel="noopener noreferrer"
-          title="Github"
-        >
+        </app-link-button>
+        <app-link-button href="https://github.com/USpiri/">
           <app-github-icon class="h-5" />
-        </a>
+        </app-link-button>
       </div>
     </section>
   `,

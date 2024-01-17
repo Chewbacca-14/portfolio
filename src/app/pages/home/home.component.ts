@@ -16,8 +16,8 @@ import { BlogComponent } from './components/blog/blog.component';
     BlogComponent,
   ],
   template: `
-    <div class="flex justify-center py-16 md:py-28 print:py-0">
-      <main class="max-w-3xl mx-8 w-full flex flex-col gap-20">
+    <div class="flex justify-center py-16 print:py-0 md:py-28">
+      <main class="mx-8 flex w-full max-w-3xl flex-col gap-20">
         <app-header />
         <app-projects />
         <app-experience />

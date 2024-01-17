@@ -1,21 +1,22 @@
 import { Component } from '@angular/core';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-footer',
   standalone: true,
-  imports: [],
+  imports: [RouterLink],
   template: `
     <footer
-      class="mb-8 mt-24 text-neutral-500 dark:text-neutral-400 text-sm px-5 flex flex-col items-center gap-4"
+      class="mb-8 mt-24 flex flex-col items-center gap-4 px-5 text-sm text-neutral-500 dark:text-neutral-400"
     >
-      <div class="flex items-center gap-4 flex-col md:flex-row">
+      <div class="flex flex-col items-center gap-4 md:flex-row">
         <section class="flex items-center gap-3">
           <div class="avatar"></div>
-          <a href="/" class="text-lg font-semibold"
-            >Uriel Spiridione | Devlyz</a
+          <a routerLink="/" class="text-lg font-semibold"
+            >Uriel Spiridione | Uspiri</a
           >
         </section>
-        <section class="flex gap-4 items-center">
+        <section class="flex items-center gap-4">
           <a
             href="https://github.com/USpiri/"
             target="_blank"

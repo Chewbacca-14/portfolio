@@ -1,8 +1,8 @@
 import { DatePipe } from '@angular/common';
-import { Component } from '@angular/core';
-import { POSTS } from '@assets/data/blog.mock';
+import { Component, OnInit, inject } from '@angular/core';
 import { Post } from '@models';
 import { LinkIconComponent } from '@shared/components/link-icon/link-icon.component';
+import { BlogService } from '@shared/services/blog.service';
 
 @Component({
   selector: 'app-blog',
@@ -12,7 +12,7 @@ import { LinkIconComponent } from '@shared/components/link-icon/link-icon.compon
     <section id="blog">
       <h2 class="text-4xl font-semibold">Blog</h2>
       <ul
-        class="mt-10 flex md:flex-wrap flex-col md:flex-row gap-3 justify-center"
+        class="mt-10 flex flex-col justify-center gap-3 md:flex-row md:flex-wrap"
       >
         @for (post of posts; track post.id) {
           <li class="flex-[1_0_40%]">
@@ -20,25 +20,25 @@ import { LinkIconComponent } from '@shared/components/link-icon/link-icon.compon
               [href]="post.url"
               target="_blank"
               rel="noopener noreferrer"
-              class="flex-col py-3 px-4 flex rounded-lg hover:scale-[102%] transition-all hover:bg-neutral-500/10 h-fit"
+              class="flex h-fit flex-col rounded-lg px-4 py-3 transition-all hover:scale-[102%] hover:bg-neutral-500/10"
             >
               <header>
-                <span class="text-neutral-500 font-bold text-sm">{{
+                <span class="text-sm font-bold text-neutral-500">{{
                   post.date | date
                 }}</span>
-                <h3 class="text-xl md:text-2xl font-semibold line-clamp-2 mb-1">
+                <h3 class="mb-1 line-clamp-2 text-xl font-semibold md:text-2xl">
                   {{ post.title }}
                 </h3>
               </header>
               <p
-                class="text-neutral-500 mt-1.5 dark:text-neutral-400/80 font-medium line-clamp-2 text-sm md:text-base"
+                class="mt-1.5 line-clamp-2 text-sm font-medium text-neutral-500 md:text-base dark:text-neutral-400/80"
               >
                 {{ post.description }}
               </p>
-              <footer class="flex flex-row gap-2 items-center mt-1.5">
+              <footer class="mt-1.5 flex flex-row items-center gap-2">
                 @for (tag of post.tags; track $index) {
                   <div
-                    class="font-semibold text-neutral-600 dark:text-neutral-300 text-sm md:text-base"
+                    class="text-sm font-semibold text-neutral-600 md:text-base dark:text-neutral-300"
                   >
                     #{{ tag }}
                   </div>
@@ -51,6 +51,14 @@ import { LinkIconComponent } from '@shared/components/link-icon/link-icon.compon
     </section>
   `,
 })
-export class BlogComponent {
-  posts: Post[] = POSTS;
+export class BlogComponent implements OnInit {
+  private blogService = inject(BlogService);
+
+  posts: Post[] = [];
+
+  ngOnInit() {
+    this.blogService
+      .getLatestsPosts()
+      .subscribe((posts) => (this.posts = posts));
+  }
 }

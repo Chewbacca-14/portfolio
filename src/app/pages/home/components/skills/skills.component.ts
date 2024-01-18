@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { SKILLS } from '@assets/data/skills.mock';
+import { SKILLS } from '@shared/data/skills.mock';
 
 @Component({
   selector: 'app-skills',
@@ -7,10 +7,10 @@ import { SKILLS } from '@assets/data/skills.mock';
   template: `
     <section id="skills">
       <h2 class="text-4xl font-semibold">Skills</h2>
-      <ul class="mt-10 flex gap-3 flex-wrap justify-center">
+      <ul class="mt-10 flex flex-wrap justify-center gap-3">
         @for (skill of skills; track $index) {
           <li
-            class="text-base hover:scale-110 transition-all hover:text-cyan-500 border border-neutral-600 rounded-lg px-2 py-1 font-semibold text-neutral-400"
+            class="rounded-lg border border-neutral-600 px-2 py-1 text-base font-semibold text-neutral-400 transition-all hover:scale-110 hover:text-cyan-500"
           >
             {{ skill }}
           </li>

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { EXPERIENCES } from '@assets/data/experience.mock';
+import { EXPERIENCES } from '@shared/data/experience.mock';
 import { Experience } from 'src/app/models/experience.interface';
 import { ExperienceCardComponent } from '../experience-card/experience-card.component';
 

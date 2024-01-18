@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { PROJECTS } from '@assets/data/projects.mock';
+import { PROJECTS } from '@shared/data/projects.mock';
 import { Project } from 'src/app/models/project.interface';
 import { ProjectComponent } from '../project/project.component';
 

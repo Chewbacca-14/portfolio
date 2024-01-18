@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { BadgeComponent } from '@shared/components/badge/badge.component';
 import { ButtonComponent } from '@shared/components/button/button.component';
 import { GithubIconComponent } from '@shared/components/github-icon/github-icon.component';
 import { InfoIconComponent } from '@shared/components/info-icon/info-icon.component';
@@ -15,6 +16,7 @@ import { Project } from 'src/app/models/project.interface';
     GithubIconComponent,
     LinkIconComponent,
     InfoIconComponent,
+    BadgeComponent,
   ],
   template: `
     <article
@@ -26,10 +28,8 @@ import { Project } from 'src/app/models/project.interface';
         </h3>
         <ul class="flex gap-3">
           @for (tag of project.tags; track $index) {
-            <li
-              class="rounded-lg border border-neutral-600 px-1 text-sm text-neutral-400"
-            >
-              {{ tag }}
+            <li>
+              <app-badge [label]="tag" />
             </li>
           }
         </ul>

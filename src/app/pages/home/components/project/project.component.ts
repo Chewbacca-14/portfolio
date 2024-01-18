@@ -20,10 +20,12 @@ import { Project } from 'src/app/models/project.interface';
   ],
   template: `
     <article
-      class="rounded-lg border border-neutral-800 px-5 py-4 transition-all hover:scale-[102%]"
+      class="rounded-lg border border-neutral-800 px-5 py-4 transition-all hover:scale-[102%] hover:border-cyan-600"
     >
       <header class="mb-3 flex flex-row flex-wrap items-center gap-3">
-        <h3 class="text-nowrap text-xl font-semibold md:text-2xl">
+        <h3
+          class="text-nowrap text-xl font-semibold transition-all md:text-2xl"
+        >
           {{ project.title }}
         </h3>
         <ul class="flex gap-3">

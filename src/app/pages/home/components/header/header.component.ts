@@ -51,7 +51,10 @@ import { XIconComponent } from '@shared/components/x-icon/x-icon.component';
         >
           <app-x-icon class="h-5" />
         </app-link-button>
-        <app-link-button href="https://github.com/USpiri/">
+        <app-link-button
+          href="https://github.com/USpiri/"
+          title="Github profile"
+        >
           <app-github-icon class="h-5" />
         </app-link-button>
       </div>

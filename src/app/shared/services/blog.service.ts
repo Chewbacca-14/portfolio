@@ -6,7 +6,7 @@ import { Post } from '@models';
   providedIn: 'root',
 })
 export class BlogService {
-  API_URL = 'https://uspiri.github.io/blog/latests.json';
+  API_URL = 'https://blog.uspiri.com/blog/latests.json';
   private http = inject(HttpClient);
 
   getLatestsPosts() {

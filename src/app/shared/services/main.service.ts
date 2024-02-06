@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
-import { Experience, Post } from '@models';
+import { Experience, Post, Project } from '@models';
 
 @Injectable({
   providedIn: 'root',
@@ -19,11 +19,11 @@ export class MainService {
   }
 
   getProjects() {
-    return this.http.get(`${this.CV_API}/projects.json`);
+    return this.http.get<Project[]>(`${this.CV_API}/projects.json`);
   }
 
   getSkills() {
-    return this.http.get(`${this.CV_API}/skills.json`);
+    return this.http.get<string[]>(`${this.CV_API}/skills.json`);
   }
 
   getUser() {

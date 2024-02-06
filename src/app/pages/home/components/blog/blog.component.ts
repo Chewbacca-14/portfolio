@@ -3,11 +3,12 @@ import { Post } from '@models';
 import { PostComponent } from '../post/post.component';
 import { TitleComponent } from '@shared/components/title/title.component';
 import { MainService } from '@shared/services/main.service';
+import { LinkButtonComponent } from '@shared/components/link-button/link-button.component';
 
 @Component({
   selector: 'app-blog',
   standalone: true,
-  imports: [PostComponent, TitleComponent],
+  imports: [PostComponent, TitleComponent, LinkButtonComponent],
   template: `
     <section id="blog">
       <hgroup class="flex items-baseline gap-2">
@@ -23,6 +24,12 @@ import { MainService } from '@shared/services/main.service';
           </li>
         }
       </ul>
+      <app-link-button
+        href="https://blog.uspiri.com"
+        btnStyle="base"
+        class="mt-8 flex underline"
+        >Read more...</app-link-button
+      >
     </section>
   `,
 })

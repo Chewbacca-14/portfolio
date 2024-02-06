@@ -10,7 +10,10 @@ import { TitleComponent } from '@shared/components/title/title.component';
   imports: [PostComponent, TitleComponent],
   template: `
     <section id="blog">
-      <app-title>Blog</app-title>
+      <hgroup class="flex items-baseline gap-2">
+        <app-title>Blog</app-title>
+        <span class="text-xs font-semibold text-neutral-400">(Spanish)</span>
+      </hgroup>
       <ul
         class="mt-10 flex flex-col justify-center gap-3 md:flex-row md:flex-wrap"
       >

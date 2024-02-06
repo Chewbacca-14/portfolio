@@ -28,7 +28,7 @@ import { Project } from 'src/app/models/project.interface';
         >
           {{ project.name }}
         </h3>
-        <ul class="flex gap-3">
+        <ul class="flex flex-wrap gap-3">
           @for (tag of project.tags; track $index) {
             <li>
               <app-badge [label]="tag" />

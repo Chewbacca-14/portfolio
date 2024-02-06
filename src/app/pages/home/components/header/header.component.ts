@@ -1,9 +1,13 @@
-import { Component } from '@angular/core';
+import { AsyncPipe } from '@angular/common';
+import { Component, OnInit, inject } from '@angular/core';
 import { FileIconComponent } from '@shared/components/file-icon/file-icon.component';
 import { GithubIconComponent } from '@shared/components/github-icon/github-icon.component';
 import { LinkButtonComponent } from '@shared/components/link-button/link-button.component';
 import { LinkedinIconComponent } from '@shared/components/linkedin-icon/linkedin-icon.component';
 import { XIconComponent } from '@shared/components/x-icon/x-icon.component';
+import { MainService } from '@shared/services/main.service';
+import { Observable } from 'rxjs';
+import { User } from 'src/app/models/user.interface';
 
 @Component({
   selector: 'app-header',
@@ -14,6 +18,7 @@ import { XIconComponent } from '@shared/components/x-icon/x-icon.component';
     GithubIconComponent,
     LinkButtonComponent,
     FileIconComponent,
+    AsyncPipe,
   ],
   template: `
     <section class="flex flex-col justify-between gap-5">
@@ -29,10 +34,12 @@ import { XIconComponent } from '@shared/components/x-icon/x-icon.component';
           <span class="text-sm font-semibold text-neutral-400 md:text-base"
             >Hey! I'm</span
           >
-          <h1 class="text-5xl font-semibold md:text-6xl">Uriel Spiridione</h1>
+          <h1 class="text-5xl font-semibold md:text-6xl">
+            {{ (user | async)?.name }}
+          </h1>
         </div>
         <h2 class="text-lg text-cyan-500 md:text-xl">
-          Full stack web developer
+          {{ (user | async)?.label }}
         </h2>
         <p class="text-sm font-semibold text-neutral-400 md:text-base">
           Web Developer & Design Enthusiast | Creating Elegant and Functional
@@ -66,4 +73,11 @@ import { XIconComponent } from '@shared/components/x-icon/x-icon.component';
     </section>
   `,
 })
-export class HeaderComponent {}
+export class HeaderComponent implements OnInit {
+  private mainService = inject(MainService);
+  user!: Observable<User>;
+
+  ngOnInit() {
+    this.user = this.mainService.getUser();
+  }
+}

@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
-import { Experience, Post, Project } from '@models';
+import { Experience, Post, Project, User } from '@models';
 
 @Injectable({
   providedIn: 'root',
@@ -27,6 +27,6 @@ export class MainService {
   }
 
   getUser() {
-    return this.http.get(`${this.CV_API}/user.json`);
+    return this.http.get<User>(`${this.CV_API}/user.json`);
   }
 }

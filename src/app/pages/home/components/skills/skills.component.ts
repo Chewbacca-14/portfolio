@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { TitleComponent } from '@shared/components/title/title.component';
-import { SKILLS } from '@shared/data/skills.mock';
+import { MainService } from '@shared/services/main.service';
 
 @Component({
   selector: 'app-skills',
@@ -12,7 +12,7 @@ import { SKILLS } from '@shared/data/skills.mock';
       <ul class="mt-10 flex flex-wrap justify-center gap-3">
         @for (skill of skills; track $index) {
           <li
-            class="rounded-md border border-neutral-600 px-2 py-1 text-base font-semibold text-neutral-400 transition-all hover:scale-105 hover:text-cyan-500"
+            class="select-none rounded-md border border-neutral-600 px-2 py-1 text-base font-semibold text-neutral-400 transition-all hover:scale-105 hover:text-cyan-500"
           >
             {{ skill }}
           </li>
@@ -21,6 +21,11 @@ import { SKILLS } from '@shared/data/skills.mock';
     </section>
   `,
 })
-export class SkillsComponent {
-  skills: string[] = SKILLS;
+export class SkillsComponent implements OnInit {
+  private mainService = inject(MainService);
+  skills: string[] = [];
+
+  ngOnInit() {
+    this.mainService.getSkills().subscribe((data) => (this.skills = data));
+  }
 }

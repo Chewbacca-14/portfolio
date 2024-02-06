@@ -1,8 +1,8 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { Post } from '@models';
-import { BlogService } from '@shared/services/blog.service';
 import { PostComponent } from '../post/post.component';
 import { TitleComponent } from '@shared/components/title/title.component';
+import { MainService } from '@shared/services/main.service';
 
 @Component({
   selector: 'app-blog',
@@ -27,13 +27,11 @@ import { TitleComponent } from '@shared/components/title/title.component';
   `,
 })
 export class BlogComponent implements OnInit {
-  private blogService = inject(BlogService);
+  private mainService = inject(MainService);
 
   posts: Post[] = [];
 
   ngOnInit() {
-    this.blogService
-      .getLatestsPosts()
-      .subscribe((posts) => (this.posts = posts));
+    this.mainService.getPosts().subscribe((posts) => (this.posts = posts));
   }
 }

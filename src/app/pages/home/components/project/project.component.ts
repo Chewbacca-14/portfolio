@@ -56,12 +56,6 @@ import { Project } from 'src/app/models/project.interface';
             <app-github-icon class="h-4 w-4" />
           </app-link-button>
         }
-        <app-button icon>
-          <app-info-icon
-            class="h-4 w-4"
-            title="{{ project.title }} more info"
-          />
-        </app-button>
       </footer>
     </article>
   `,

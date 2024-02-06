@@ -13,9 +13,9 @@ import {
   imports: [NgClass],
   template: `
     <button
-      class="block rounded-lg border border-neutral-500 fill-neutral-50 p-2 transition-all hover:scale-110"
+      class="group block rounded-md border border-neutral-500 fill-neutral-50 transition-all hover:scale-105 hover:bg-neutral-400/10 active:scale-90"
       (click)="btnClick.emit()"
-      [ngClass]="icon ? 'px-2' : 'px-3'"
+      [ngClass]="icon ? 'p-2' : 'px-2 py-1'"
       [title]="title"
     >
       <ng-content />

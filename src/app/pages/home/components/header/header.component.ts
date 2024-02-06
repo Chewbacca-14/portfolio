@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FileIconComponent } from '@shared/components/file-icon/file-icon.component';
 import { GithubIconComponent } from '@shared/components/github-icon/github-icon.component';
 import { LinkButtonComponent } from '@shared/components/link-button/link-button.component';
 import { LinkedinIconComponent } from '@shared/components/linkedin-icon/linkedin-icon.component';
@@ -12,6 +13,7 @@ import { XIconComponent } from '@shared/components/x-icon/x-icon.component';
     LinkedinIconComponent,
     GithubIconComponent,
     LinkButtonComponent,
+    FileIconComponent,
   ],
   template: `
     <section class="flex flex-col justify-between gap-5">
@@ -56,6 +58,9 @@ import { XIconComponent } from '@shared/components/x-icon/x-icon.component';
           title="Github profile"
         >
           <app-github-icon class="h-5" />
+        </app-link-button>
+        <app-link-button href="https://cv.uspiri.com/" title="Curriculim Vitae">
+          <app-file-icon class="h-5 w-5" />
         </app-link-button>
       </div>
     </section>

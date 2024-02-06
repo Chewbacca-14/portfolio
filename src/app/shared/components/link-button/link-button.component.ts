@@ -5,7 +5,9 @@ import { Component, Input } from '@angular/core';
   standalone: true,
   template: `
     <a
-      class="block rounded-lg border border-neutral-500 fill-neutral-50 p-2 transition-all hover:scale-110"
+      class="group block rounded-md {{
+        btnStyle === 'outline' && 'border'
+      }} border-neutral-500 fill-neutral-50 p-2 transition-all hover:scale-105 hover:bg-neutral-400/10 active:scale-90"
       [href]="href"
       target="_blank"
       rel="noopener noreferrer"
@@ -18,4 +20,5 @@ import { Component, Input } from '@angular/core';
 export class LinkButtonComponent {
   @Input({ required: true }) href!: string;
   @Input() title = '';
+  @Input() btnStyle: 'outline' | 'base' = 'outline';
 }

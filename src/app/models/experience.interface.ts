@@ -1,8 +1,11 @@
 export interface Experience {
-  id: string;
-  date: string;
   company: string;
-  job: string;
-  url?: string;
+  location: string;
   description: string;
+  position: string;
+  url?: string;
+  startDate: string;
+  endDate: string;
+  remote: boolean;
+  highlights: string[];
 }

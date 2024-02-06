@@ -1,8 +1,8 @@
-import { Component } from '@angular/core';
-import { EXPERIENCES } from '@shared/data/experience.mock';
+import { Component, OnInit, inject } from '@angular/core';
 import { Experience } from 'src/app/models/experience.interface';
 import { ExperienceCardComponent } from '../experience-card/experience-card.component';
 import { TitleComponent } from '@shared/components/title/title.component';
+import { MainService } from '@shared/services/main.service';
 
 @Component({
   selector: 'app-experience',
@@ -12,7 +12,7 @@ import { TitleComponent } from '@shared/components/title/title.component';
     <section id="experience">
       <app-title>Experience</app-title>
       <ul class="mt-10 flex flex-col gap-3">
-        @for (experience of experiences; track experience.id) {
+        @for (experience of experiences; track $index) {
           <li>
             <app-experience-card [experience]="experience" />
           </li>
@@ -21,6 +21,12 @@ import { TitleComponent } from '@shared/components/title/title.component';
     </section>
   `,
 })
-export class ExperienceComponent {
-  experiences: Experience[] = EXPERIENCES;
+export class ExperienceComponent implements OnInit {
+  private mainService = inject(MainService);
+  experiences: Experience[] = [];
+  ngOnInit() {
+    this.mainService
+      .getExperience()
+      .subscribe((data) => (this.experiences = data));
+  }
 }

@@ -1,12 +1,14 @@
 import { Component } from '@angular/core';
+import { TitleComponent } from '@shared/components/title/title.component';
 import { SKILLS } from '@shared/data/skills.mock';
 
 @Component({
   selector: 'app-skills',
+  imports: [TitleComponent],
   standalone: true,
   template: `
     <section id="skills">
-      <h2 class="text-4xl font-semibold">Skills</h2>
+      <app-title>Skills</app-title>
       <ul class="mt-10 flex flex-wrap justify-center gap-3">
         @for (skill of skills; track $index) {
           <li

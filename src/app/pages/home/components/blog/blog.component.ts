@@ -2,14 +2,15 @@ import { Component, OnInit, inject } from '@angular/core';
 import { Post } from '@models';
 import { BlogService } from '@shared/services/blog.service';
 import { PostComponent } from '../post/post.component';
+import { TitleComponent } from '@shared/components/title/title.component';
 
 @Component({
   selector: 'app-blog',
   standalone: true,
-  imports: [PostComponent],
+  imports: [PostComponent, TitleComponent],
   template: `
     <section id="blog">
-      <h2 class="text-4xl font-semibold">Blog</h2>
+      <app-title>Blog</app-title>
       <ul
         class="mt-10 flex flex-col justify-center gap-3 md:flex-row md:flex-wrap"
       >

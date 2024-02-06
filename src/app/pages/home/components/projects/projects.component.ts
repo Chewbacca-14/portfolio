@@ -2,14 +2,15 @@ import { Component } from '@angular/core';
 import { PROJECTS } from '@shared/data/projects.mock';
 import { Project } from 'src/app/models/project.interface';
 import { ProjectComponent } from '../project/project.component';
+import { TitleComponent } from '@shared/components/title/title.component';
 
 @Component({
   selector: 'app-projects',
   standalone: true,
-  imports: [ProjectComponent],
+  imports: [ProjectComponent, TitleComponent],
   template: `
     <section id="projects">
-      <h2 class="text-4xl font-semibold">Projects</h2>
+      <app-title>Projects</app-title>
       <ul class="mt-10 flex flex-col gap-3">
         @for (project of projects; track project.id) {
           <li>

@@ -1,10 +1,20 @@
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { GithubIconComponent } from '../github-icon/github-icon.component';
+import { XIconComponent } from '../x-icon/x-icon.component';
+import { LinkedinIconComponent } from '../linkedin-icon/linkedin-icon.component';
+import { FileIconComponent } from '../file-icon/file-icon.component';
 
 @Component({
   selector: 'app-footer',
   standalone: true,
-  imports: [RouterLink],
+  imports: [
+    RouterLink,
+    GithubIconComponent,
+    XIconComponent,
+    LinkedinIconComponent,
+    FileIconComponent,
+  ],
   template: `
     <footer
       class="mb-8 mt-24 flex flex-col items-center gap-4 px-5 text-sm text-neutral-500 dark:text-neutral-400"
@@ -16,29 +26,38 @@ import { RouterLink } from '@angular/router';
             >Uriel Spiridione | Uspiri</a
           >
         </section>
-        <section class="flex items-center gap-4">
+        <section class="media flex items-center gap-4">
           <a
             href="https://github.com/USpiri/"
             target="_blank"
-            class="rounded-lg transition-all hover:scale-110 active:scale-90"
-            title="Github"
+            title="Github Page"
+            rel="noopener noreferrer"
           >
-            Github
+            <app-github-icon class="h-4" />
           </a>
           <a
             href="https://www.linkedin.com/in/urielspiridione/"
             target="_blank"
-            class="rounded-lg transition-all hover:scale-110 active:scale-90"
             title="Linkedin"
+            rel="noopener noreferrer"
           >
-            Linkedin
+            <app-linkedin-icon class="h-4" />
           </a>
           <a
             href="https://twitter.com/UrielSpiridione"
             target="_blank"
-            class="rounded-lg transition-all hover:scale-110 active:scale-90"
             title="X Twitter"
-            >Twitter
+            rel="noopener noreferrer"
+          >
+            <app-x-icon class="h-4" />
+          </a>
+          <a
+            href="https://cv.uspiri.com"
+            target="_blank"
+            title="Uriel Spiridione Curriculum"
+            rel="noopener noreferrer"
+          >
+            <app-file-icon class="h-4" />
           </a>
         </section>
       </div>
@@ -49,7 +68,12 @@ import { RouterLink } from '@angular/router';
     </footer>
   `,
   styles: `
-    .avatar {
+  .media{
+    a{
+      @apply p-2 fill-neutral-500 rounded-md border-neutral-500 transition-all hover:scale-105 active:scale-90 hover:bg-neutral-400/10;
+    }
+  }
+  .avatar {
     width: 25px;
     height: 25px;
     border-radius: 100%;

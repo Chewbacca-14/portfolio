@@ -34,7 +34,7 @@ import { LinkIconComponent } from '@shared/components/link-icon/link-icon.compon
         <p class="text-sm font-medium text-neutral-300">
           {{ experience.position }}
         </p>
-        <p class="text-neutral-400">
+        <p class="text-sm text-neutral-400">
           {{ experience.description }}
         </p>
       </div>

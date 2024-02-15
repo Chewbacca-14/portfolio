@@ -36,7 +36,7 @@ import { Project } from 'src/app/models/project.interface';
           }
         </ul>
       </header>
-      <p class="mb-4 text-sm leading-snug text-neutral-400">
+      <p class="mb-4 text-sm leading-snug text-neutral-400 sm:text-base">
         {{ project.description }}
       </p>
       <footer class="flex gap-2">

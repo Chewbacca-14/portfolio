@@ -27,7 +27,7 @@ import { User } from 'src/app/models/user.interface';
         alt="Uriel Spiridione profile image"
         width="150"
         height="150"
-        class="rounded-full border-4 border-cyan-600"
+        class="rounded-full border-4 border-cyan-500"
       />
       <div class="flex flex-col gap-2">
         <div>

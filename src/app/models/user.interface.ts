@@ -1,21 +1,17 @@
-export interface User {
+export interface Me {
+  id: number;
   name: string;
-  label: string;
-  image: string;
+  surname: string;
+  profession: string;
+  experience: number;
+  description: string;
   email: string;
   phone: string;
-  phoneLabel: string;
-  url: string;
-  summart: string;
-  location: {
-    address: string;
-    map: string;
-  };
-  profiles: Media[];
+  imageurl: string;
+  skills: Skill[];
 }
 
-export interface Media {
-  url: string;
-  network: string;
-  username: string;
+export interface Skill {
+  id: number;
+  name: string;
 }

@@ -21,14 +21,13 @@ import { FileIconComponent } from '../file-icon/file-icon.component';
     >
       <div class="flex flex-col items-center gap-4 md:flex-row">
         <section class="flex items-center gap-3">
-          <div class="avatar"></div>
           <a routerLink="/" class="text-lg font-semibold"
-            >Uriel Spiridione | Uspiri</a
+            >Maxim Bulanovich | Flutter Developer</a
           >
         </section>
         <section class="media flex items-center gap-4">
           <a
-            href="https://github.com/USpiri/"
+            href="https://github.com/Chewbacca-14"
             target="_blank"
             title="Github Page"
             rel="noopener noreferrer"
@@ -36,34 +35,22 @@ import { FileIconComponent } from '../file-icon/file-icon.component';
             <app-github-icon class="h-4" />
           </a>
           <a
-            href="https://www.linkedin.com/in/urielspiridione/"
+            href="https://linkedin.com/in/max-bulanovich-702642260"
             target="_blank"
             title="Linkedin"
             rel="noopener noreferrer"
           >
             <app-linkedin-icon class="h-4" />
           </a>
-          <a
-            href="https://twitter.com/UrielSpiridione"
-            target="_blank"
-            title="X Twitter"
-            rel="noopener noreferrer"
-          >
-            <app-x-icon class="h-4" />
-          </a>
-          <a
-            href="https://cv.uspiri.com"
-            target="_blank"
-            title="Uriel Spiridione Curriculum"
-            rel="noopener noreferrer"
-          >
-            <app-file-icon class="h-4" />
-          </a>
         </section>
       </div>
       <p class="text-center text-sm">
         &copy; {{ year }}
-        <span class="font-semibold"> Uriel Spiridione</span>
+        <span class="font-semibold">
+          Maxim Bulanovich | IČO 21886261 | Modřínová 2011, 253 01 Hostivice |
+          Fyzická osoba zapsaná v Živnostenském rejstříku v Městském úřadu
+          Černošice od 5. 8. 2024
+        </span>
       </p>
     </footer>
   `,

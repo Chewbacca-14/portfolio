@@ -19,21 +19,31 @@ import { LinkButtonComponent } from '@shared/components/link-button/link-button.
           </li>
         }
       </ul>
-      <app-link-button
-        href="https://cv.uspiri.com"
-        btnStyle="base"
-        class="mt-8 flex underline"
-        >Read more...</app-link-button
-      >
     </section>
   `,
 })
-export class ExperienceComponent implements OnInit {
-  private mainService = inject(MainService);
-  experiences: Experience[] = [];
-  ngOnInit() {
-    this.mainService
-      .getExperience()
-      .subscribe((data) => (this.experiences = data));
-  }
+export class ExperienceComponent {
+  experiences: Experience[] = [
+    {
+      company: 'Adaptine, s.r.o.',
+      location: 'Prague, Czech Republic',
+      description: 'Developing Mobile and Web applications in a full-time role',
+      position: 'Flutter Developer',
+      startDate: '06.2024',
+      endDate: 'Actually',
+      remote: false,
+      highlights: [],
+    },
+    {
+      company: 'Freelance',
+      location: 'Online',
+      description:
+        'Freelance Flutter developer creating cross-platform iOS, Android ans Web apps since 2023, delivering 10+ projects with a focus on innovation.',
+      position: 'Flutter Developer',
+      startDate: '05.2023',
+      endDate: '07.2024',
+      remote: true,
+      highlights: [],
+    },
+  ];
 }

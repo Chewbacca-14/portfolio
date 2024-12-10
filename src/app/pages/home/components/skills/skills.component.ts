@@ -1,10 +1,13 @@
 import { Component, OnInit, inject } from '@angular/core';
+import { Me } from '@models';
 import { TitleComponent } from '@shared/components/title/title.component';
 import { MainService } from '@shared/services/main.service';
+import { map, Observable } from 'rxjs';
+import { AsyncPipe } from '@angular/common';
 
 @Component({
   selector: 'app-skills',
-  imports: [TitleComponent],
+  imports: [TitleComponent, AsyncPipe],
   standalone: true,
   template: `
     <section id="skills">
@@ -21,11 +24,28 @@ import { MainService } from '@shared/services/main.service';
     </section>
   `,
 })
-export class SkillsComponent implements OnInit {
-  private mainService = inject(MainService);
-  skills: string[] = [];
-
-  ngOnInit() {
-    this.mainService.getSkills().subscribe((data) => (this.skills = data));
-  }
+export class SkillsComponent {
+  skills: string[] = [
+    'Flutter',
+    'Dart',
+    'Firebase',
+    'Google Map Integration',
+    'sqflite',
+    'Hive',
+    'Shared preferences',
+    'BloC',
+    'Provider',
+    'GetX',
+    'GetIt',
+    'MVC',
+    'MVVM',
+    'Injectable',
+    'Rest API',
+    'WebSockets',
+    'GraphQL',
+    'Localizations',
+    'Google Play publishing',
+    'App Store publishing',
+    'more...',
+  ];
 }

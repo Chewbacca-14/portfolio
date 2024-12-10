@@ -1,30 +1,30 @@
 import { AsyncPipe } from '@angular/common';
 import { Component, OnInit, inject } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { FileIconComponent } from '@shared/components/file-icon/file-icon.component';
 import { GithubIconComponent } from '@shared/components/github-icon/github-icon.component';
 import { LinkButtonComponent } from '@shared/components/link-button/link-button.component';
 import { LinkedinIconComponent } from '@shared/components/linkedin-icon/linkedin-icon.component';
 import { XIconComponent } from '@shared/components/x-icon/x-icon.component';
 import { MainService } from '@shared/services/main.service';
-import { Observable } from 'rxjs';
-import { User } from 'src/app/models/user.interface';
+import { map, Observable } from 'rxjs';
+import { Me } from '@models';
+import { log } from 'node:console';
 
 @Component({
   selector: 'app-header',
   standalone: true,
   imports: [
-    XIconComponent,
     LinkedinIconComponent,
     GithubIconComponent,
     LinkButtonComponent,
-    FileIconComponent,
-    AsyncPipe,
+    CommonModule,
   ],
   template: `
     <section class="flex flex-col justify-between gap-5">
       <img
-        src="./assets/profile.jpg"
-        alt="Uriel Spiridione profile image"
+        src="https://media.licdn.com/dms/image/v2/D4E03AQFxAjdx65J4NQ/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1720036174465?e=1735776000&v=beta&t=HVS1r7-B70Snt-PxGIuk99A0cW8ibORSWWnj79P9elI"
+        alt="Maxim Bulanovich profile image"
         width="150"
         height="150"
         class="rounded-full border-4 border-cyan-500"
@@ -34,50 +34,31 @@ import { User } from 'src/app/models/user.interface';
           <span class="text-sm font-semibold text-neutral-400 md:text-base"
             >Hey! I'm</span
           >
-          <h1 class="text-5xl font-semibold md:text-6xl">
-            {{ (user | async)?.name }}
-          </h1>
+          <h1 class="text-5xl font-semibold md:text-6xl">Maxim Bulanovich</h1>
         </div>
-        <h2 class="text-lg text-cyan-500 md:text-xl">
-          {{ (user | async)?.label }}
-        </h2>
+        <h2 class="text-lg text-cyan-500 md:text-xl">Flutter Developer</h2>
         <p class="text-sm font-semibold text-neutral-400 md:text-base">
-          Web Developer & Design Enthusiast | Creating Elegant and Functional
-          Online Spaces | Transforming Ideas into Interactive Experiences |
-          Crafting Code with Creativity and Minimalism.
+          Flutter Developer | Passionate about Building Interactive Mobile
+          Experiences | 2+ Years of Experience | Driven to Learn, Grow, and
+          Innovate
         </p>
       </div>
       <div class="flex gap-3">
         <app-link-button
-          href="https://www.linkedin.com/in/urielspiridione/"
+          href="https://linkedin.com/in/max-bulanovich-702642260"
           title="Linkedin page"
         >
           <app-linkedin-icon class="h-5" />
         </app-link-button>
+
         <app-link-button
-          href="https://x.com/UrielSpiridione/"
-          title="X/Twitter page"
-        >
-          <app-x-icon class="h-5" />
-        </app-link-button>
-        <app-link-button
-          href="https://github.com/USpiri/"
+          href="https://github.com/Chewbacca-14"
           title="Github profile"
         >
           <app-github-icon class="h-5" />
-        </app-link-button>
-        <app-link-button href="https://cv.uspiri.com/" title="Curriculim Vitae">
-          <app-file-icon class="h-5 w-5" />
         </app-link-button>
       </div>
     </section>
   `,
 })
-export class HeaderComponent implements OnInit {
-  private mainService = inject(MainService);
-  user!: Observable<User>;
-
-  ngOnInit() {
-    this.user = this.mainService.getUser();
-  }
-}
+export class HeaderComponent {}

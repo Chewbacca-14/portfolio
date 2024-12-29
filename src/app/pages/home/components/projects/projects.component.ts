@@ -26,12 +26,12 @@ export class ProjectsComponent {
   projects: Project[] = [
     {
       id: 1,
-      name: 'NodusVPN',
+      name: 'Maru',
       tags: ['Commercial App', 'Flutter', 'Dart', 'Decentralized network'],
-      url: 'https://nodusvpn.com/',
+      url: null,
       repo: null,
       description:
-        'I cannot disclose the details of the project, the VPN project has been frozen indefinitely. I was involved in the creation of a mobile app.',
+        'Maru was developed to create a secure and decentralized way to access the internet that is resistant to censorship and ensures a high level of anonymity. The network consists of numerous nodes created by users around the world, making it decentralized and resilient to attacks.',
     },
     {
       id: 2,
@@ -72,7 +72,7 @@ export class ProjectsComponent {
       name: 'EasyPGP',
       tags: ['Commercial App', 'Flutter', 'Dart', 'openpgp', 'Secured Storage'],
       url: null,
-      repo: null,
+      repo: 'https://github.com/Chewbacca-14/My-Website/tree/mainnew/phone_mockups/easypgp',
       description:
         'The app decrypts PGP-encrypted messages using the password and the PGP private key. Decrypt messages by pasting the encrypted text or scanning a QR code. If you don’t have PGP keys, generate them in the app with 2048, 4096, or 8192-bit lengths. Generated keys are securely stored on your phone. You can also upload existing key pairs. Access can be secured with a password, fingerprint, or Face ID.',
     },

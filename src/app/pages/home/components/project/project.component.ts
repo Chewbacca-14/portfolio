@@ -11,11 +11,9 @@ import { Project } from 'src/app/models/project.interface';
   selector: 'app-project',
   standalone: true,
   imports: [
-    ButtonComponent,
     LinkButtonComponent,
     GithubIconComponent,
     LinkIconComponent,
-    InfoIconComponent,
     BadgeComponent,
   ],
   template: `

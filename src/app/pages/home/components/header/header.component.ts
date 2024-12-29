@@ -38,9 +38,9 @@ import { log } from 'node:console';
         </div>
         <h2 class="text-lg text-cyan-500 md:text-xl">Flutter Developer</h2>
         <p class="text-sm font-semibold text-neutral-400 md:text-base">
-          Flutter Developer | Passionate about Building Interactive Mobile
-          Experiences | 2+ Years of Experience | Driven to Learn, Grow, and
-          Innovate
+          Flutter Developer | Crafting Engaging and High-Performance Mobile
+          Applications | 2+ Years of Experience in Building Interactive User
+          Experiences | Eager to Learn, Adapt, and Drive Innovation
         </p>
       </div>
       <div class="flex gap-3">
